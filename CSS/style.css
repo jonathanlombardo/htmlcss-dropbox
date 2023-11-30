@@ -46,17 +46,22 @@ ul {
   margin: 0 auto;
 }
 
-/* .btn a {
-  display: block;
-  height: 100%;
-} */
+.btn {
+  height: fit-content;
+  width: fit-content;
+}
 
 /* -- DEBUG */
 
 .db {
   background-color: rgba(255, 0, 0, 0.236);
   border: 3px dashed black;
+  background-clip: content-box;
   /* min-height: 50px; */
+}
+
+i::after {
+  content: "⁜";
 }
 
 /* ---------------------------------------- */
@@ -78,6 +83,8 @@ nav .link {
 
 /* # MAIN */
 
+/* HERO */
+
 .hero {
   background-color: bisque;
 }
@@ -93,7 +100,7 @@ nav .link {
   position: relative;
 }
 
-.hero .content .left * {
+.hero .content .left *:not(.btn) {
   flex-grow: 1;
 }
 
@@ -110,4 +117,49 @@ nav .link {
 .hero .content img {
   position: relative;
   top: var(--space-xl);
+}
+
+/* BUY A PLAN */
+
+.buy-a-plan .card-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.buy-a-plan .card-wrapper .card {
+  width: calc(100% / 3 - var(--space-l));
+}
+
+.buy-a-plan .card .type {
+  text-align: center;
+}
+
+.buy-a-plan .card .feature {
+  display: flex;
+}
+
+.buy-a-plan .card#business-plan .bodycard-wrapper {
+  display: flex;
+}
+
+.buy-a-plan .card#business-plan .infocard-wrapper {
+  flex-grow: 1;
+}
+
+/* CAROUSEL */
+
+.carousel .container {
+  display: flex;
+}
+
+/* FEATURES */
+
+.features .card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.features .card {
+  width: calc(100% / 3);
 }
