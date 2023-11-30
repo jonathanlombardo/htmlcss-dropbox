@@ -46,7 +46,15 @@ ul {
   margin: 0 auto;
 }
 
+footer .container,
+.hero .container {
+  max-width: 1380px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
 .btn {
+  display: block;
   height: fit-content;
   width: fit-content;
 }
@@ -162,4 +170,53 @@ nav .link {
 
 .features .card {
   width: calc(100% / 3);
+}
+
+/* PARTNER */
+.partner .partnerboxes-wrapper {
+  display: flex;
+}
+
+.partner .smallboxes-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100vw / 3);
+  height: calc(100vw / 3);
+}
+
+.partner .smallbox {
+  width: 50%;
+  height: 50%;
+}
+
+.partner .bigbox {
+  width: calc(100vw / 3);
+  height: calc(100vw / 3);
+}
+
+.partner .layover {
+  background-color: rgba(0, 255, 255, 0.155);
+}
+
+.partner .start-free.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* FAQ */
+
+.faq .frequent-question {
+  position: relative;
+}
+
+.faq .frequent-question i {
+  position: absolute;
+  right: 0;
+}
+
+/* #FOOTER */
+
+footer .wrapper {
+  display: flex;
+  justify-content: space-between;
 }
