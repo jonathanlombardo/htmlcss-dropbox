@@ -68,8 +68,12 @@ footer .container,
   /* min-height: 50px; */
 }
 
+i {
+  font-style: inherit;
+}
+
 i::after {
-  content: "⁜";
+  content: "⨶";
 }
 
 /* ---------------------------------------- */
@@ -141,10 +145,6 @@ nav .link {
 
 .buy-a-plan .card .type {
   text-align: center;
-}
-
-.buy-a-plan .card .feature {
-  display: flex;
 }
 
 .buy-a-plan .card#business-plan .bodycard-wrapper {
