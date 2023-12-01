@@ -29,34 +29,60 @@ ul {
   --text-xs: 0.6rem;
   --text-s: 1rem;
   --text-m: 1.5rem;
-  --text-l: 2rem;
-  --text-xl: 2.5rem;
-  --space-xs: 3px;
-  --space-s: 5px;
-  --space-m: 8px;
-  --space-l: 15px;
-  --space-xl: 50px;
+  --text-l: 4rem;
+  --text-xl: 4.5rem;
+  --space-xs: 5px;
+  --space-s: 22px;
+  --space-m: 33px;
+  --space-l: 44px;
+  --space-xl: 55px;
+  --space-xxl: 100px;
+  --space-xxxl: 150px;
 
-  --header-min-height: 60px;
+  --hero-img-overflow: 100px;
+
+  --header-min-height: 80px;
+  --main-color: #0061ff;
+  --secondary-color: #b4d0e7;
+  --main-font-color: #595959;
+}
+
+.col-30 {
+  width: 30%;
+}
+
+.col-70 {
+  width: 70%;
 }
 
 .container {
   max-width: 1180px;
-  padding: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
   margin: 0 auto;
 }
 
 footer .container,
 .hero .container {
-  max-width: 1380px;
-  padding: 20px;
-  margin: 0 auto;
+  max-width: 1235px;
 }
 
 .btn {
   display: block;
   height: fit-content;
   width: fit-content;
+  padding: 8px 18px;
+  border-radius: 0;
+  background-color: #ffffff;
+}
+
+.btn.primary {
+  background-color: var(--main-color);
+  color: white;
+}
+
+section {
+  margin-top: var(--space-xxxl);
 }
 
 /* -- DEBUG */
@@ -64,7 +90,7 @@ footer .container,
 .db {
   background-color: rgba(255, 0, 0, 0.236);
   border: 3px dashed black;
-  background-clip: content-box;
+  /* background-clip: content-box; */
   /* min-height: 50px; */
 }
 
@@ -85,6 +111,13 @@ header {
   justify-content: space-between;
   align-items: center;
   min-height: var(--header-min-height);
+  color: var(--main-font-color);
+}
+
+header nav .link li,
+nav.left .logo {
+  padding-left: var(--space-s);
+  padding-right: var(--space-s);
 }
 
 nav.left,
@@ -98,7 +131,14 @@ nav .link {
 /* HERO */
 
 .hero {
-  background-color: bisque;
+  background-color: var(--secondary-color);
+}
+
+.hero h1 {
+  font-size: var(--text-xl);
+  font-weight: 900;
+  padding-top: var(--space-xxl);
+  padding-bottom: var(--space-xl);
 }
 
 .hero .content,
@@ -107,17 +147,19 @@ nav .link {
 }
 
 .hero .content .left {
-  margin-top: var(--space-xl);
   flex-direction: column;
   position: relative;
+  gap: var(--space-m);
+  /* color: var(--main-font-color); */
 }
 
 .hero .content .left *:not(.btn) {
-  flex-grow: 1;
+  flex-grow: 0;
 }
 
 .hero .content .left .icon {
-  flex-grow: 10;
+  flex-grow: 1;
+  font-size: var(--text-l);
 }
 
 .hero .content .left i {
@@ -128,7 +170,8 @@ nav .link {
 
 .hero .content img {
   position: relative;
-  top: var(--space-xl);
+  top: var(--hero-img-overflow);
+  margin-top: calc(-1 * var(--hero-img-overflow));
 }
 
 /* BUY A PLAN */
