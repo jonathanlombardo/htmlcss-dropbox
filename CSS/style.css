@@ -191,6 +191,10 @@ nav .link {
   padding-bottom: var(--space-xl);
 }
 
+.buy-a-plan .invoicing-opt label {
+  padding-right: calc(2 * var(--space-s));
+}
+
 .buy-a-plan h2 {
   font-size: var(--text-l);
 }
