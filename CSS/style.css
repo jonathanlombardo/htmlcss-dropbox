@@ -26,10 +26,10 @@ ul {
 /* -- UTILS */
 
 :root {
-  --text-xs: 0.6rem;
+  --text-xs: 0.9rem;
   --text-s: 1rem;
   --text-m: 1.5rem;
-  --text-l: 4rem;
+  --text-l: 2.5rem;
   --text-xl: 4.5rem;
   --space-xs: 5px;
   --space-s: 22px;
@@ -39,9 +39,11 @@ ul {
   --space-xxl: 100px;
   --space-xxxl: 150px;
 
-  --hero-img-overflow: 100px;
+  --hero-img-overflow: 75px;
 
   --header-min-height: 80px;
+  --plan-card-minheight: 264px;
+
   --main-color: #0061ff;
   --secondary-color: #b4d0e7;
   --main-font-color: #595959;
@@ -56,7 +58,7 @@ ul {
 }
 
 .container {
-  max-width: 1180px;
+  max-width: 1046px;
   padding-left: 20px;
   padding-right: 20px;
   margin: 0 auto;
@@ -70,7 +72,7 @@ footer .container,
 .btn {
   display: block;
   height: fit-content;
-  width: fit-content;
+  text-align: center;
   padding: 8px 18px;
   border-radius: 0;
   background-color: #ffffff;
@@ -153,13 +155,17 @@ nav .link {
   /* color: var(--main-font-color); */
 }
 
-.hero .content .left *:not(.btn) {
+.hero .content .left * {
   flex-grow: 0;
+}
+
+.hero .content .left .btn {
+  width: fit-content;
 }
 
 .hero .content .left .icon {
   flex-grow: 1;
-  font-size: var(--text-l);
+  font-size: var(--text-xl);
 }
 
 .hero .content .left i {
@@ -176,18 +182,80 @@ nav .link {
 
 /* BUY A PLAN */
 
+.buy-a-plan {
+  font-size: var(--text-xs);
+}
+
+.buy-a-plan h2,
+.buy-a-plan .invoicing-opt {
+  padding-bottom: var(--space-xl);
+}
+
+.buy-a-plan h2 {
+  font-size: var(--text-l);
+}
+
+/* --CARD */
+
 .buy-a-plan .card-wrapper {
   display: flex;
   width: 100%;
   justify-content: space-between;
 }
 
+.buy-a-plan .card {
+  border: 1px solid var(--main-font-color);
+}
+
 .buy-a-plan .card-wrapper .card {
   width: calc(100% / 3 - var(--space-l));
 }
 
+.buy-a-plan .card-wrapper {
+  margin-bottom: calc(2 * var(--space-s));
+}
+
+.buy-a-plan .card .card-top {
+  min-height: var(--plan-card-minheight);
+}
+
 .buy-a-plan .card .type {
   text-align: center;
+  border-bottom: 1px solid var(--main-font-color);
+  margin-bottom: var(--space-s);
+}
+
+.buy-a-plan .title {
+  font-size: var(--text-m);
+}
+
+.buy-a-plan .price {
+  font-weight: bold;
+}
+
+.buy-a-plan .period {
+  color: var(--main-font-color);
+}
+
+.buy-a-plan .card > *:not(.btn, hr, .card-top, .bodycard-wrapper),
+.buy-a-plan .card .card-top > *,
+.buy-a-plan .card .infocard-wrapper > * {
+  padding: calc(var(--space-s) / 2) var(--space-s);
+}
+
+.buy-a-plan .card ul li {
+  padding-top: calc(var(--space-s) / 2);
+  padding-bottom: calc(var(--space-s) / 2);
+}
+
+.buy-a-plan .card .btn,
+.buy-a-plan .card hr {
+  margin: calc(var(--space-s) / 2) var(--space-s);
+}
+
+.buy-a-plan .card .title,
+.buy-a-plan .card .price {
+  padding-bottom: 0;
 }
 
 .buy-a-plan .card#business-plan .bodycard-wrapper {
@@ -197,6 +265,12 @@ nav .link {
 .buy-a-plan .card#business-plan .infocard-wrapper {
   flex-grow: 1;
 }
+
+.buy-a-plan .card#business-plan .desc {
+  margin-top: var(--space-xxl);
+}
+
+/* --END CARD */
 
 /* CAROUSEL */
 
