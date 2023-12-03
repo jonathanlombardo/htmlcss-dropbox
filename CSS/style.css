@@ -31,7 +31,7 @@ ul {
   --text-m: 1.5rem;
   --text-l: 2.5rem;
   --text-xl: 4.5rem;
-  --space-xs: 5px;
+  --space-xs: 15px;
   --space-s: 22px;
   --space-m: 33px;
   --space-l: 44px;
@@ -151,18 +151,31 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: var(--header-min-height);
+  background-color: white;
   color: var(--secondary-font-color);
+  box-shadow: 0 0px 8px 0 grey;
+  z-index: 1;
+  position: sticky;
+  top: 0;
 }
 
-header nav .link li,
-nav.left .logo {
+header nav .link li a:not(.btn, .logo) {
+  display: block;
+  padding: var(--space-m) var(--space-s);
+}
+
+header nav .link a:not(.btn, .logo):hover {
+  box-shadow: 0 10px 0 var(--main-color);
+  backdrop-filter: brightness(0.95);
+}
+
+header nav .link li.logo,
+header nav .link li.start {
   padding-left: var(--space-s);
   padding-right: var(--space-s);
 }
 
-nav.left,
-nav .link {
+header nav .link {
   display: flex;
   align-items: center;
 }
