@@ -105,6 +105,14 @@ footer .container,
   color: white;
 }
 
+.btn:hover {
+  filter: brightness(0.95);
+}
+
+.btn:active {
+  filter: invert(0.2);
+}
+
 .hero .btn,
 .carousel .btn {
   width: fit-content;
@@ -379,7 +387,14 @@ header nav .link {
 
 .partner .top.container .link {
   color: blue;
+}
+
+.partner .top.container .link:hover {
   text-decoration: underline;
+}
+
+.partner .top.container .link:active {
+  filter: opacity(0.8);
 }
 
 .partner .bottom.container {
@@ -419,6 +434,10 @@ header nav .link {
   width: 50%;
   height: 50%;
   padding: calc(2 * var(--space-m));
+}
+
+.partner .smallbox:hover {
+  border: 10px solid rgba(255, 255, 255, 0.25);
 }
 
 .partner .smallbox img {
@@ -467,22 +486,44 @@ header nav .link {
 .faq .title {
   font-size: var(--text-l);
   padding-bottom: var(--space-xl);
+  border-bottom: 1px solid black;
 }
 
 .faq .frequent-question {
   position: relative;
   padding-top: var(--space-m);
   padding-bottom: var(--space-m);
+  cursor: default;
 }
 
-.faq .frequent-question:nth-of-type(odd) {
-  border-top: 1px solid black;
+.faq .faq-wrapper {
   border-bottom: 1px solid black;
+}
+
+.faq p {
+  padding-bottom: var(--space-m);
 }
 
 .faq .frequent-question i {
   position: absolute;
   right: 0;
+}
+
+.faq .frequent-question i.fa-angle-up,
+.faq p {
+  display: none;
+}
+
+.faq .frequent-question:hover i.fa-angle-down {
+  display: none;
+}
+
+.faq .frequent-question:hover i.fa-angle-up {
+  display: inline;
+}
+
+.faq .frequent-question:hover + p {
+  display: block;
 }
 
 .faq .container {
@@ -516,4 +557,12 @@ footer .lang {
   filter: opacity(0.5);
   padding-top: var(--space-m);
   padding-bottom: var(--space-m);
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer a:active {
+  filter: opacity(0.8);
 }
