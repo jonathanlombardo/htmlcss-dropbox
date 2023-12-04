@@ -48,7 +48,7 @@ ol.fa-ol {
   --hero-img-overflow: 75px;
 
   --header-min-height: 80px;
-  --plan-card-minheight: 264px;
+  --plan-card-toplist-minheight: 212px;
 
   --main-color: #0061ff;
   --secondary-color: #b4d0e7;
@@ -284,8 +284,8 @@ header nav .link {
   margin-bottom: calc(2 * var(--space-s));
 }
 
-.buy-a-plan .card .card-top {
-  min-height: var(--plan-card-minheight);
+.buy-a-plan .card ul:first-of-type {
+  min-height: var(--plan-card-toplist-minheight);
 }
 
 .buy-a-plan .card .type {
@@ -306,8 +306,7 @@ header nav .link {
   color: var(--secondary-font-color);
 }
 
-.buy-a-plan .card > *:not(.btn, hr, .card-top, .bodycard-wrapper),
-.buy-a-plan .card .card-top > *,
+.buy-a-plan .card > *:not(.btn, hr, .bodycard-wrapper),
 .buy-a-plan .card .infocard-wrapper > * {
   padding: calc(var(--space-s) / 2) var(--space-s);
 }
@@ -437,9 +436,6 @@ header nav .link {
 }
 
 .partner .smallbox {
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   width: 50%;
   height: 50%;
   position: relative;
