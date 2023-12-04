@@ -23,6 +23,12 @@ ul {
   list-style: none;
 }
 
+ul.fa-ul,
+ol.fa-ol {
+  --fa-li-margin: var(--li-margin);
+  --fa-li-width: var(--li-width);
+}
+
 /* -- UTILS */
 
 :root {
@@ -58,6 +64,9 @@ ul {
   --box-color-7: #0d2481;
   --box-color-8: #ffd830;
   --bigbox-color: #f5f5f5;
+
+  --li-margin: 1em;
+  --li-width: 1.5em;
 }
 
 .col-30 {
@@ -428,12 +437,12 @@ header nav .link {
 }
 
 .partner .smallbox {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   width: 50%;
   height: 50%;
-  padding: calc(2 * var(--space-m));
+  position: relative;
 }
 
 .partner .smallbox:hover {
@@ -442,6 +451,11 @@ header nav .link {
 
 .partner .smallbox img {
   filter: invert(100%);
+  width: calc((100vw / 6) - (2 * var(--space-m)));
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .partner .bigbox {
@@ -449,6 +463,8 @@ header nav .link {
   height: calc(100vw / 3);
   padding: var(--space-m);
   background-color: var(--bigbox-color);
+  display: flex;
+  flex-direction: column;
 }
 
 .partner .bigbox > * {
